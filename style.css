@@ -1,0 +1,108 @@
+*{
+    box-sizing: border-box;
+    font-family: "Roboto";
+}
+
+.body{
+    width:375px;
+    height: 507px;
+    
+   
+}
+
+.topo{
+    height:80px;
+    width:375px;
+    position: fixed;
+    top: 0px;
+    left:0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:lightblue;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.logo{
+    padding-left: 22px;
+}
+
+.people{
+    font-size: 38px;
+    padding-right:20px;
+    
+}
+
+.feed{
+    background: red;
+    padding-top: 100px;
+    width:375px;
+   
+}
+.text-box{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 375px;
+    height:auto;
+    border-radius: 2px;
+    background-color: rgb(250, 250, 74);
+    font-family: "Roboto";
+    font-size: 14px;
+    line-height: 16px;
+
+}
+.horario{
+    display: flex;
+    align-items: center;
+    color: #AAAAAA;
+    padding-left:6px;
+}
+.user-acao-destinatario{
+    font-weight:700;
+    padding-left:3px;
+}
+.texto{
+    padding-left:3px;
+    
+}
+.h1{
+    font-weight:400;
+}
+.loginout{
+    background: #d2d2d2;
+    
+}
+.reservada{
+   background: #FFDEDE;
+}
+.digitar{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 375px;
+    height: 80px;
+    left: 0px;
+    bottom: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.05);
+    
+
+}
+.input{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto";
+    font-style: italic;
+    padding-left: 6px;
+    border: none;
+    width: 340px;
+    height: 60px;
+    color:rgb(52, 52, 52)
+}
+.plane{
+    font-size:26px;
+}
