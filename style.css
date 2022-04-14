@@ -6,10 +6,30 @@
 .body{
     width:375px;
     height: 507px;
-    
-   
 }
-
+.hidden{
+    display: none;
+}
+.bold{
+    font-weight:700;
+}
+.pad{
+    padding-left: 10px;
+}
+.flex{
+    display: flex;
+}
+p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+}
+.ion{
+    padding-right:6px;
+    font-size:18px;
+}
 .topo{
     height:80px;
     width:375px;
@@ -34,7 +54,7 @@
 }
 
 .feed{
-    background: red;
+    background: rgb(247, 191, 191);
     padding-top: 100px;
     width:375px;
    
@@ -59,11 +79,12 @@
     padding-left:6px;
 }
 .user-acao-destinatario{
-    font-weight:700;
     padding-left:3px;
 }
 .texto{
     padding-left:3px;
+    font-family: Roboto;
+    font-size:15px;
     
 }
 .h1{
@@ -77,7 +98,7 @@
    background: #FFDEDE;
 }
 .digitar{
-    position: absolute;
+    position: fixed;
     display: flex;
     align-items: center;
     width: 375px;
@@ -105,4 +126,37 @@
 }
 .plane{
     font-size:26px;
+}
+.lateral{
+    position: absolute;
+    top:0;
+    left:175px;
+    z-index:3;
+    width: 200px;
+    height: 500px;
+    background-color: lightgray;
+    border-radius: 8px;
+}
+.topo-lateral{
+    height:84px;
+    padding-top: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.visibili{
+    height:80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fade{
+    position: absolute;
+    z-index: 2;
+    top:0;
+    left:0;
+    z-index:3;
+    width: 175px;
+    height: 500px;
+    background-color: rgba(0, 0, 0, 0.7);
 }
