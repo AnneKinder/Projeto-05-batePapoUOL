@@ -1,13 +1,13 @@
 let usuario; //GLOBAL
 let texto; //GLOBAL
-let mensagens = document.querySelector(".mensagens")  //GLOBAL //ENCONTRA DIV P/INSERIR MENSAGENS
-
+let mensagens = document.querySelector(".mensagens") //ENCONTRA DIV P/INSERIR MENSAGENS
+let destinatario;
 
 //ADQUIRIR NOME DO USUARIO
 function login(){
 usuario = prompt("Qual o seu nome?")
 console.log(usuario)
-mensagens.innerHTML += ` <div class="text-box">
+mensagens.innerHTML += ` <div class="text-box entrasai">
     <div class="horario">(09:21:45) </div>
     <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">entrou na sala</span>
     </div> `
@@ -27,9 +27,9 @@ function send(){
 
 //INSERIR MSG NO FEED
 function msgEnviada(){
-     mensagens.innerHTML += ` <div class="text-box">
+     mensagens.innerHTML += ` <div class="text-box public">
     <div class="horario">(09:21:45) </div>
-    <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> Todos: </div>
+    <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> ${destinatario}: </div>
     <div class="texto h1"> ${texto}</div>
     </div> `
 }
@@ -47,10 +47,22 @@ function fechaAba(){
     document.querySelector(".fade").classList.add("hidden")
 }
 
+//ESCOLHE DESTINATARIO
+function selecUser(elemento){
+    destinatario = elemento.innerHTML
+    console.log(destinatario)
 
+}
 
-
-
+//ESCOLHE VISIBILIDADE
+function selecVisib(elemento){
+    privOUnao = elemento.innerHTML
+    console.log(privOUnao)
+    
+    if (elemento.innerHTML== "Reservadamente"){
+    alert ("LA VEM")
+    }
+}
 
 
 

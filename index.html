@@ -38,37 +38,46 @@
 
 
 
-
-
-
-
-
-
-
     <div class="lateral hidden">
         <div class="topo-lat">
             <div class="texto bold">Escolha um contato para enviar mensagem:</div>
         </div>
+
+
         <div class="participantes pad">
+
             <div class="todos flex">
                 <ion-icon class="ion" name="people"></ion-icon>
-                <p>Todos</p>
+                <p onclick="selecUser(this)">Todos</p>
             </div>
-            <div class="usuario flex">
-                <ion-icon class="ion"  name="person-circle"></ion-icon>
-                <p>nome do usuario</p>
-            </div>
+
+            <div class="lista-usuarios"> <!--todos que entrarem-->
+
+                <div class="usuario flex"><!--isso vai no js-->
+                    <ion-icon class="ion"  name="person-circle"></ion-icon>
+                    <p onclick="selecUser(this)">nome do usuario</p>
+                </div> <!--isso vai no js-->
+
+            </div> 
+
         </div>
+
+
         <div class="visibili texto bold">Escolha a visibilidade:</div>
+
         <div class="publico pad flex">
             <ion-icon class="ion"  name="lock-open"></ion-icon>
-            <p>Público</p>
+            <p onclick="selecVisib(this)">Público</p>
         </div>
+
         <div class="reservadam pad flex">
             <ion-icon class="ion"  name="person-circle"></ion-icon>
-            <p>Reservadamente</p>
+            <p onclick="selecVisib(this)">Reservadamente</p>
         </div>
+
     </div>
+
+
     <div class="fade hidden" onclick="fechaAba()"></div>
 
 

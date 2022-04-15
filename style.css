@@ -3,33 +3,53 @@
     font-family: "Roboto";
 }
 
+.rosinha{  /*reservadamente */
+    background-color: #FFDEDE;
+}
+
+.entrasai{ /*login e logout da sala */
+    background-color: #DCDCDC;
+}
+
+.public{ /*mensagens publicas */
+    background-color: #DCDCDC;
+}
+
 .body{
     width:375px;
     height: 507px;
 }
+
 .hidden{
     display: none;
 }
+
 .bold{
     font-weight:700;
 }
+
 .pad{
     padding-left: 10px;
 }
+
 .flex{
     display: flex;
 }
+
 p{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 19px;
+    cursor: pointer;
 }
+
 .ion{
     padding-right:6px;
     font-size:18px;
 }
+
 .topo{
     height:80px;
     width:375px;
@@ -39,8 +59,8 @@ p{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color:lightblue;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo{
@@ -55,11 +75,12 @@ p{
 }
 
 .feed{
-    background: rgb(247, 191, 191);
+    background: #E5E5E5;
     padding-top: 100px;
     width:375px;
    
 }
+
 .text-box{
     display: flex;
     flex-wrap: wrap;
@@ -67,38 +88,44 @@ p{
     width: 375px;
     height:auto;
     border-radius: 2px;
-    background-color: rgb(250, 250, 74);
     font-family: "Roboto";
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 4px;
 
 }
+
 .horario{
     display: flex;
     align-items: center;
     color: #AAAAAA;
     padding-left:6px;
 }
+
 .user-acao-destinatario{
     padding-left:3px;
 }
+
 .texto{
     padding-left:3px;
     font-family: Roboto;
     font-size:15px;
     
 }
+
 .h1{
     font-weight:400;
 }
+
 .loginout{
     background: #d2d2d2;
     
 }
+
 .reservada{
    background: #FFDEDE;
 }
+
 .digitar{
     position: fixed;
     display: flex;
@@ -112,6 +139,7 @@ p{
     
 
 }
+
 .input{
     font-weight: 400;
     font-size: 15px;
@@ -126,10 +154,12 @@ p{
     height: 60px;
     color:rgb(52, 52, 52)
 }
+
 .plane{
     font-size:26px;
     cursor: pointer;
 }
+
 .lateral{
     position: fixed;
     top:0;
@@ -140,6 +170,7 @@ p{
     background-color: lightgray;
     border-radius: 8px;
 }
+
 .topo-lat{
     height:84px;
     padding-top: 30px;
@@ -147,12 +178,14 @@ p{
     text-align: center;
     justify-content: center;
 }
+
 .visibili{
     height:80px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .fade{
     position: absolute;
     z-index: 2;
