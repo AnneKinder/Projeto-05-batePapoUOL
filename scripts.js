@@ -29,14 +29,33 @@ function send(){
 //INSERIR MSG NO FEED
 function msgEnviada(){
     
-
-     mensagens.innerHTML += ` <div class="text-box public">
-    <div class="horario">(09:21:45) </div>
-    <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> ${destinatario}: </div>
-    <div class="texto h1"> ${texto}</div>
-    </div> `
+    if (destinatario== undefined ){  
+        mensagens.innerHTML += ` <div class="text-box public">
+       <div class="horario">(09:21:45) </div>
+       <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> Todos: </div>
+       <div class="texto h1"> ${texto}</div>
+       </div> `
 }
 
+
+    else if (privOUnao== "Reservadamente"){
+             mensagens.innerHTML += ` <div class="text-box rosinha">
+            <div class="horario">(09:21:45) </div>
+            <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> ${destinatario}: </div>
+            <div class="texto h1"> ${texto}</div>
+            </div> `
+    }
+
+    else if (privOUnao== "Público" || privOUnao== undefined ){  
+            mensagens.innerHTML += ` <div class="text-box public">
+            <div class="horario">(09:21:45) </div>
+            <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> ${destinatario}: </div>
+            <div class="texto h1"> ${texto}</div>
+            </div> `
+    }
+
+   
+}
 
 //ABRE ABA LATERAL
 function abaLateral(){
@@ -61,7 +80,7 @@ function selecUser(elemento){
 function selecVisib(elemento){
     privOUnao = elemento.innerHTML
     console.log(privOUnao)
-    
+ 
    
 }
 
