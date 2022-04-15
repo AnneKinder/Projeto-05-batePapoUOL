@@ -6,10 +6,14 @@ let mensagens = document.querySelector(".mensagens")  //GLOBAL //ENCONTRA DIV P/
 function login(){
 usuario = prompt("Qual o seu nome?")
 console.log(usuario)
+mensagens.innerHTML += ` <div class="text-box">
+    <div class="horario">(09:21:45) </div>
+    <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">entrou na sala</span>
+    </div> `
 }
 login()
 
-//SÓ CRIA VARIAVEL TEXTO (COM O VALUE DO INPUT)
+//CRIA VARIAVEL TEXTO (COM O VALUE DO INPUT)
 function send(){
     texto = document.querySelector("input").value
     console.log(texto)
