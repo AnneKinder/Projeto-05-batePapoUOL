@@ -2,6 +2,7 @@ let usuario; //GLOBAL
 let texto; //GLOBAL
 let mensagens = document.querySelector(".mensagens")  //GLOBAL //ENCONTRA DIV P/INSERIR MENSAGENS
 
+
 //ADQUIRIR NOME DO USUARIO
 function login(){
 usuario = prompt("Qual o seu nome?")
@@ -13,20 +14,16 @@ mensagens.innerHTML += ` <div class="text-box">
 }
 login()
 
+
 //CRIA VARIAVEL TEXTO (COM O VALUE DO INPUT)
 function send(){
     texto = document.querySelector("input").value
     console.log(texto)
     msgEnviada()
     document.querySelector("input").value = ""
-
     }
-    send()
     
-    
-
-
-
+  
 
 //INSERIR MSG NO FEED
 function msgEnviada(){
@@ -36,20 +33,5 @@ function msgEnviada(){
     <div class="texto h1"> ${texto}</div>
     </div> `
 }
-
-
-
-//ENCONTRA DIV P/INSERIR INPUT
-  //GLOBAL
-
-
-//INSERIR INPUT NO FEED
-//function inputar(){
- //   let digitarTexto = document.querySelector("input").value 
-  //  console.log(digitarTexto)
-    
-
-inputar()
-
 
 
