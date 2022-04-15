@@ -50,6 +50,7 @@ p{
 .people{
     font-size: 38px;
     padding-right:20px;
+    cursor: pointer
     
 }
 
@@ -130,16 +131,16 @@ p{
     cursor: pointer;
 }
 .lateral{
-    position: absolute;
+    position: fixed;
     top:0;
     left:175px;
     z-index:3;
     width: 200px;
-    height: 500px;
+    height: 507px;
     background-color: lightgray;
     border-radius: 8px;
 }
-.topo-lateral{
+.topo-lat{
     height:84px;
     padding-top: 30px;
     display: flex;
@@ -159,6 +160,6 @@ p{
     left:0;
     z-index:3;
     width: 175px;
-    height: 500px;
+    height: 507px;
     background-color: rgba(0, 0, 0, 0.7);
 }

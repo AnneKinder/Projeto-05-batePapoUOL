@@ -35,3 +35,27 @@ function msgEnviada(){
 }
 
 
+//ABRE ABA LATERAL
+function abaLateral(){
+    document.querySelector(".lateral").classList.remove("hidden")
+    document.querySelector(".fade").classList.remove("hidden")
+}
+
+//SÓ SABE FECHAR ABA LATERAL
+function fechaAba(){ 
+    document.querySelector(".lateral").classList.add("hidden")
+    document.querySelector(".fade").classList.add("hidden")
+}
+
+
+
+
+
+
+
+
+
+
+// MUDAR HORARIO:
+    //let today = new Date();
+    //let time = today.getHours() + ":" + today.getMinutes() /+ ":" + today.getSeconds();
