@@ -2,6 +2,7 @@ let usuario; //GLOBAL
 let texto; //GLOBAL
 let mensagens = document.querySelector(".mensagens") //ENCONTRA DIV P/INSERIR MENSAGENS
 let destinatario;
+let privOUnao;
 
 //ADQUIRIR NOME DO USUARIO
 function login(){
@@ -27,6 +28,8 @@ function send(){
 
 //INSERIR MSG NO FEED
 function msgEnviada(){
+    
+
      mensagens.innerHTML += ` <div class="text-box public">
     <div class="horario">(09:21:45) </div>
     <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> ${destinatario}: </div>
@@ -59,9 +62,7 @@ function selecVisib(elemento){
     privOUnao = elemento.innerHTML
     console.log(privOUnao)
     
-    if (elemento.innerHTML== "Reservadamente"){
-    alert ("LA VEM")
-    }
+   
 }
 
 
