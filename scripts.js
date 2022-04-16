@@ -122,15 +122,19 @@ function estaOnline(){              //ENVIANDO STATUS PRO API
         name: usuario
         };
 
-        let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nome )
+             let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nome )
 
-        promise.then(quandoSucesso);
-        promise.catch(quandoErro);
+             promise.then(quandoSucesso);
+             promise.catch(quandoErro);
 
         function quandoSucesso(response){           // USER ON
             console.log(response)
         }
-}       function quandoErro(error){                //OFF
-         console.log(error.response)
-         estaOnline()
-}
+
+        function quandoErro(error){                //OFF
+            console.log(error.response)
+            estaOnline()
+   }
+   
+
+}       
