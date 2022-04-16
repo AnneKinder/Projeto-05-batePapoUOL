@@ -73,19 +73,18 @@ function fechaAba(){
 function selecUser(elemento){
     destinatario = elemento.innerHTML
     console.log(destinatario)
+    fechaAba() 
 
 }
 
 //ESCOLHE VISIBILIDADE
 function selecVisib(elemento){
-    privOUnao = elemento.innerHTML
-    console.log(privOUnao)
+    privOUnao = elemento.innerHTML;
+    console.log(privOUnao);
+    fechaAba() 
  
    
 }
-
-
-
 
 
 // MUDAR HORARIO:

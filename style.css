@@ -17,7 +17,7 @@
 
 .body{
     width:375px;
-    height: 507px;
+    height: 587px;
 }
 
 .hidden{
@@ -43,6 +43,14 @@ p{
     font-size: 14px;
     line-height: 19px;
     cursor: pointer;
+
+}
+p:hover{
+    text-decoration: underline
+}
+
+p:active{
+    text-decoration: double;
 }
 
 .ion{
@@ -80,6 +88,10 @@ p{
     width:375px;
    
 }
+.mensagens{
+    height:500px;
+    margin-bottom: 100px;
+}
 
 .text-box{
     display: flex;
@@ -92,6 +104,7 @@ p{
     font-size: 14px;
     line-height: 16px;
     margin-bottom: 4px;
+    padding:3px;
 
 }
 
@@ -107,9 +120,12 @@ p{
 }
 
 .texto{
+    width: 375px;
     padding-left:3px;
     font-family: Roboto;
     font-size:15px;
+    display: flex;
+    flex-wrap: wrap;
     
 }
 
@@ -166,7 +182,7 @@ p{
     left:175px;
     z-index:3;
     width: 200px;
-    height: 507px;
+    height: 587px;
     background-color: lightgray;
     border-radius: 8px;
 }
@@ -181,6 +197,7 @@ p{
 
 .visibili{
     height:80px;
+    width:200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -193,6 +210,6 @@ p{
     left:0;
     z-index:3;
     width: 175px;
-    height: 507px;
+    height: 587px;
     background-color: rgba(0, 0, 0, 0.7);
 }
