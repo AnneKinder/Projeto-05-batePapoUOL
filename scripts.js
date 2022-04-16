@@ -4,6 +4,8 @@ let mensagens = document.querySelector(".mensagens") //ENCONTRA DIV P/INSERIR ME
 let destinatario;
 let privOUnao;
 
+
+
 //ADQUIRIR NOME DO USUARIO
 function login(){
 usuario = prompt("Qual o seu nome?")
@@ -85,9 +87,21 @@ function selecVisib(elemento){
  
    
 }
-const elementoQueQueroQueApareca = document.querySelector('.mensagem');
-elementoQueQueroQueApareca.scrollIntoView();
 
+function enviarNomes(){
+    const mandaAi = {
+        name: "KARLA TIAMUUUU"
+      };
+    
+    axios.post('https://mock-api.driven.com.br/api/v6/uol/participants ', mandaAi);
+    
+    promise.then(quandoSucesso);
+    }
+    enviarNomes()
+    
+    function quandoSucesso(){
+        alert ("taaa")
+    }
 
 // MUDAR HORARIO:
     //let today = new Date();
