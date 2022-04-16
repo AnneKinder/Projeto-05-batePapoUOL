@@ -88,21 +88,49 @@ function selecVisib(elemento){
    
 }
 
-function enviarNomes(){
-    const mandaAi = {
-        name: "KARLA TIAMUUUU"
-      };
-    
-    axios.post('https://mock-api.driven.com.br/api/v6/uol/participants ', mandaAi);
-    
-    promise.then(quandoSucesso);
-    }
-    enviarNomes()
-    
-    function quandoSucesso(){
-        alert ("taaa")
-    }
 
-// MUDAR HORARIO:
-    //let today = new Date();
-    //let time = today.getHours() + ":" + today.getMinutes() /+ ":" + today.getSeconds();
+//API <-
+
+function enviarNomes(){                   //ENVIANDO NOME DO USER PRO API
+
+    const nome = {
+    name: usuario
+    };
+    
+        let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/participants ', nome);
+    
+         promise.then(quandoSucesso);
+         promise.catch(quandoErro);
+    
+    
+
+    function quandoSucesso(response){           // USER OK
+        console.log(response)
+    }
+    function quandoErro(error){                //JÁ TEM USER COM ESSE NOME
+        console.log(error.response)
+        login();
+        enviarNomes()
+    }
+    setInterval(estaOnline, 5000);
+}
+    enviarNomes()
+
+function estaOnline(){              //ENVIANDO STATUS PRO API
+
+    const nome = {
+        name: usuario
+        };
+
+        let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nome )
+
+        promise.then(quandoSucesso);
+        promise.catch(quandoErro);
+
+        function quandoSucesso(response){           // USER ON
+            console.log(response)
+        }
+}       function quandoErro(error){                //OFF
+         console.log(error.response)
+         estaOnline()
+}
