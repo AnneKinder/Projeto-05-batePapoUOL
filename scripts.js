@@ -54,7 +54,7 @@ function msgEnviada(){
             </div> `
     }
 
-   
+    scrollIntoView();
 }
 
 //ABRE ABA LATERAL
@@ -85,6 +85,8 @@ function selecVisib(elemento){
  
    
 }
+const elementoQueQueroQueApareca = document.querySelector('.mensagem');
+elementoQueQueroQueApareca.scrollIntoView();
 
 
 // MUDAR HORARIO:

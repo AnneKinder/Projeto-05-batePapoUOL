@@ -17,7 +17,7 @@
 
 .body{
     width:375px;
-    height: 587px;
+    height: 507px;
 }
 
 .hidden{
@@ -89,8 +89,7 @@ p:active{
    
 }
 .mensagens{
-    height:500px;
-    margin-bottom: 100px;
+
 }
 
 .text-box{
@@ -120,12 +119,9 @@ p:active{
 }
 
 .texto{
-    width: 375px;
     padding-left:3px;
     font-family: Roboto;
     font-size:15px;
-    display: flex;
-    flex-wrap: wrap;
     
 }
 
@@ -197,7 +193,6 @@ p:active{
 
 .visibili{
     height:80px;
-    width:200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -210,6 +205,6 @@ p:active{
     left:0;
     z-index:3;
     width: 175px;
-    height: 587px;
+    height: 507px;
     background-color: rgba(0, 0, 0, 0.7);
 }
