@@ -116,6 +116,8 @@ function enviarNomes(){                   //ENVIANDO NOME DO USER PRO API
 }
     enviarNomes()
 
+
+
 function estaOnline(){              //ENVIANDO STATUS PRO API
 
     const nome = {
@@ -134,7 +136,30 @@ function estaOnline(){              //ENVIANDO STATUS PRO API
         function quandoErro(error){                //OFF
             console.log(error.response)
             estaOnline()
-   }
-   
+   } 
 
 }       
+
+
+
+function getMsg(){
+
+            let promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
+
+             promise.then(quandoSucesso);
+             promise.catch(quandoErro);
+
+
+        function quandoSucesso(response){           // MSG VEM
+            console.log(response.data)
+            const type = response.data.status
+        }
+
+        function quandoErro(error){                //ERROR
+            console.log(error.response)
+            
+         } 
+
+
+}
+getMsg()
