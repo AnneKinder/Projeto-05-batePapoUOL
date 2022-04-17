@@ -56,8 +56,7 @@ function msgEnviada(){
             </div> `
     }
 
-    scrollIntoView();
-}
+   }
 
 //ABRE ABA LATERAL
 function abaLateral(){
@@ -141,7 +140,7 @@ function estaOnline(){              //ENVIANDO STATUS PRO API
 }       
 
 
-
+setInterval(getMsg, 3000)
 function getMsg(){
 
             let promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
@@ -153,9 +152,10 @@ function getMsg(){
         function quandoSucesso(response){           // MSG VEM
             let dados = response.data
             console.log(dados)
-            console.log(dados[0].type)
 
-        for (let i=0; i<dados.length; i++){
+            
+
+            for (let i=0; i<dados.length; i++){
 
             const user = dados[i].from
             const to = dados[i].to;
@@ -163,7 +163,8 @@ function getMsg(){
             const type = dados[i].type;
             const time = dados[i].time;
 
-        
+            
+
 
             if (type=="message"){
                 mensagens.innerHTML += ` <div class="text-box public">
@@ -197,7 +198,7 @@ function getMsg(){
 
             }      
 
-        }
+            } 
     }
 
         function quandoErro(error){                //ERROR
@@ -210,7 +211,5 @@ function getMsg(){
 
 getMsg()
 
-{
-
-
-}
+//const elementoQueQueroQueApareca = dados[dados.length-1]
+//elementoQueQueroQueApareca.scrollIntoView()
