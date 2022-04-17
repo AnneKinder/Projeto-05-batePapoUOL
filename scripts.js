@@ -135,7 +135,7 @@ function estaOnline(){              //ENVIANDO STATUS PRO API
 
 setInterval(getMsg, 3000)
 function getMsg(){
-
+    
             let promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
 
              promise.then(quandoSucesso);
@@ -145,49 +145,50 @@ function getMsg(){
         function quandoSucesso(response){           // MSG VEM
             let dados = response.data
                        
+            mensagens.innerHTML = "";
+             for (let i=0; i<dados.length; i++){
 
-            for (let i=0; i<dados.length; i++){
-
-            const user = dados[i].from
-            const to = dados[i].to;
-            const text = dados[i].text;
-            const type = dados[i].type;
-            const time = dados[i].time;
+                const user = dados[i].from
+                const to = dados[i].to;
+                const text = dados[i].text;
+                const type = dados[i].type;
+                const time = dados[i].time;
 
             
                 
 
-            if (type=="message"){
-                mensagens.innerHTML += ` <div class="text-box public">
-                <div class="horario">${time} </div>
-                <div class="user-acao-destinatario bold"> ${user} <span class="h1">para</span> ${to}: </div>
-                <div class="texto h1"> ${text}</div>
-                </div> `
-            }
+                if (type=="message"){
+                    mensagens.innerHTML += ` <div class="text-box public">
+                    <div class="horario">${time} </div>
+                    <div class="user-acao-destinatario bold"> ${user} <span class="h1">para</span> ${to}: </div>
+                    <div class="texto h1"> ${text}</div>
+                    </div> `
+                }
 
-            if (type=="private_message"){
-                mensagens.innerHTML += ` <div class="text-box rosinha">
-                <div class="horario">${time} </div>
-                <div class="user-acao-destinatario bold"> ${user} <span class="h1">para</span> ${to}: </div>
-                <div class="texto h1"> ${text}</div>
-                </div> `
+                if (type=="private_message"){
+                    mensagens.innerHTML += ` <div class="text-box rosinha">
+                    <div class="horario">${time} </div>
+                    <div class="user-acao-destinatario bold"> ${user} <span class="h1">para</span> ${to}: </div>
+                    <div class="texto h1"> ${text}</div>
+                    </div> `
 
-            }
+                }
 
-            if (type=="status" && text== "entra na sala..."){
-                mensagens.innerHTML += ` <div class="text-box entrasai">
-                <div class="horario">${time} </div>
-                <div class="user-acao-destinatario bold"> ${user} <span class="h1">entrou na sala...</span>
-                </div> `
-            }
+                if (type=="status" && text== "entra na sala..."){
+                    mensagens.innerHTML += ` <div class="text-box entrasai">
+                    <div class="horario">${time} </div>
+                    <div class="user-acao-destinatario bold"> ${user} <span class="h1">entrou na sala...</span>
+                    </div> `
+                }
 
-            if (type=="status" && text== "sai da sala..."){
-                mensagens.innerHTML += ` <div class="text-box entrasai">
-                <div class="horario">${time} </div>
-                <div class="user-acao-destinatario bold"> ${user} <span class="h1">saiu da sala...</span>
-                </div> `
+                if (type=="status" && text== "sai da sala..."){
+                    mensagens.innerHTML += ` <div class="text-box entrasai">
+                    <div class="horario">${time} </div>
+                    <div class="user-acao-destinatario bold"> ${user} <span class="h1">saiu da sala...</span>
+                    </div> `
 
-            }      
+                }      
+        
             
             } 
     }
@@ -204,3 +205,8 @@ getMsg()
 
 //const elementoQueQueroQueApareca = dados[dados.length-1]
 //elementoQueQueroQueApareca.scrollIntoView()
+
+
+
+// falta:       1)scrollintoview
+//              2) tela msg
