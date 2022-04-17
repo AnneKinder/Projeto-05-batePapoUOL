@@ -151,15 +151,64 @@ function getMsg(){
 
 
         function quandoSucesso(response){           // MSG VEM
-            console.log(response.data)
-            const type = response.data.status
+            let dados = response.data
+            console.log(dados)
+            console.log(dados[0].type)
+
+            const user = dados[0].from
+            const to = dados[0].to;
+            const text = dados[0].text;
+            const type = dados[0].type;
+            const time = dados[0].time;
+
+        
+
+            if (type=="message"){
+                mensagens.innerHTML += ` <div class="text-box public">
+                <div class="horario">${time} </div>
+                <div class="user-acao-destinatario bold"> ${user} <span class="h1">para</span> ${to}: </div>
+                <div class="texto h1"> ${text}</div>
+                </div> `
+            }
+
+            if (type=="private_message"){
+                mensagens.innerHTML += ` <div class="text-box rosinha">
+                <div class="horario">${time} </div>
+                <div class="user-acao-destinatario bold"> ${user} <span class="h1">para</span> ${to}: </div>
+                <div class="texto h1"> ${text}</div>
+                </div> `
+
+            }
+
+            if (type=="status" && text== "entra na sala..."){
+                mensagens.innerHTML += ` <div class="text-box entrasai">
+                <div class="horario">${time} </div>
+                <div class="user-acao-destinatario bold"> ${user} <span class="h1">entrou na sala...</span>
+                </div> `
+            }
+
+            if (type=="status" && text== "sai da sala..."){
+                mensagens.innerHTML += ` <div class="text-box entrasai">
+                <div class="horario">${time} </div>
+                <div class="user-acao-destinatario bold"> ${user} <span class="h1">saiu da sala...</span>
+                </div> `
+
+            }      
+
         }
+        
 
         function quandoErro(error){                //ERROR
             console.log(error.response)
-            
+            getMsg()
          } 
+
+     }
+
+
+getMsg()
+
+{
 
 
 }
-getMsg()
