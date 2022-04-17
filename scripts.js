@@ -22,41 +22,34 @@ login()
 function send(){
     texto = document.querySelector("input").value
     console.log(texto)
-    msgEnviada()
     document.querySelector("input").value = ""
+    postMsg();
     }
     
+function postMsg(){
+
+    const mensagemDoInput = {
+        from: usuario,
+        to: "Todos",
+        text: texto,
+        type: "message"
+    }
+
+    let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagemDoInput)
+
+             promise.then(quandoSucesso);
+             promise.catch(quandoErro);
+
+             function quandoSucesso(){
+                 console.log("foi pro servidor?")
+             }
+
+             function quandoErro(){
+                 console.log("deu ruim!")
+             }
+}
   
 
-//INSERIR MSG NO FEED
-function msgEnviada(){
-    
-    if (destinatario== undefined ){  
-        mensagens.innerHTML += ` <div class="text-box public">
-       <div class="horario">(09:21:45) </div>
-       <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> Todos: </div>
-       <div class="texto h1"> ${texto}</div>
-       </div> `
-}
-
-
-    else if (privOUnao== "Reservadamente"){
-             mensagens.innerHTML += ` <div class="text-box rosinha">
-            <div class="horario">(09:21:45) </div>
-            <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> ${destinatario}: </div>
-            <div class="texto h1"> ${texto}</div>
-            </div> `
-    }
-
-    else if (privOUnao== "Público" || privOUnao== undefined ){  
-            mensagens.innerHTML += ` <div class="text-box public">
-            <div class="horario">(09:21:45) </div>
-            <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">para</span> ${destinatario}: </div>
-            <div class="texto h1"> ${texto}</div>
-            </div> `
-    }
-
-   }
 
 //ABRE ABA LATERAL
 function abaLateral(){
@@ -151,9 +144,7 @@ function getMsg(){
 
         function quandoSucesso(response){           // MSG VEM
             let dados = response.data
-            console.log(dados)
-
-            
+                       
 
             for (let i=0; i<dados.length; i++){
 
@@ -164,7 +155,7 @@ function getMsg(){
             const time = dados[i].time;
 
             
-
+                
 
             if (type=="message"){
                 mensagens.innerHTML += ` <div class="text-box public">
@@ -197,7 +188,7 @@ function getMsg(){
                 </div> `
 
             }      
-
+            
             } 
     }
 
