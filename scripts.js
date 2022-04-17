@@ -155,11 +155,13 @@ function getMsg(){
             console.log(dados)
             console.log(dados[0].type)
 
-            const user = dados[0].from
-            const to = dados[0].to;
-            const text = dados[0].text;
-            const type = dados[0].type;
-            const time = dados[0].time;
+        for (let i=0; i<dados.length; i++){
+
+            const user = dados[i].from
+            const to = dados[i].to;
+            const text = dados[i].text;
+            const type = dados[i].type;
+            const time = dados[i].time;
 
         
 
@@ -196,7 +198,7 @@ function getMsg(){
             }      
 
         }
-        
+    }
 
         function quandoErro(error){                //ERROR
             console.log(error.response)
