@@ -14,7 +14,7 @@
     <title>Chat UOL</title>
 </head>
 
-<body> <!-- inserindo divs p/ colocar direto pelo js depois-->
+<body> 
     <div class="topo"> 
         <img class="logo" src="images/logo 1.png" />
         <ion-icon class="people" name="people" onclick="abaLateral()"></ion-icon>
@@ -22,70 +22,59 @@
 
     <div class="feed">
         <div class="mensagens">
-            <!--tudo no js-->
-            <!--API-->
-
-
+            
         </div>
         
-
         <div class="digitar">
             <div class="input"> <input type="text" class="input" placeholder="Escreva aqui..." value=""></div>
             <ion-icon class="plane" name="paper-plane-outline" onclick="send()" ></ion-icon>
-            
         </div>
-
         
     </div> <!--fecha feed-->
 
 
 
 
-    <div class="lateral hidden">
+
+
+    <!--bônus/não finalizado-->
+    <div class="lateral hidden"> 
         <div class="topo-lat">
             <div class="texto bold">Escolha um contato para enviar mensagem:</div>
         </div>
 
-
         <div class="participantes pad">
-
             <div class="todos flex">
                 <ion-icon class="ion" name="people"></ion-icon>
                 <p onclick="selecUser(this)">Todos</p>
             </div>
 
-            <div class="lista-usuarios"> <!--todos que entrarem-->
-
-                <div class="usuario flex"><!--isso vai no js-->
+            <div class="lista-usuarios">
+                <div class="usuario flex">
                     <ion-icon class="ion"  name="person-circle"></ion-icon>
                     <p onclick="selecUser(this)">nome do usuario</p>
-                </div> <!--isso vai no js-->
-
+                </div> 
             </div> 
-
         </div>
 
 
         <div class="visibili texto bold">Escolha a visibilidade:</div>
-
         <div class="publico pad flex">
             <ion-icon class="ion"  name="lock-open"></ion-icon>
             <p onclick="selecVisib(this)">Público</p>
         </div>
-
         <div class="reservadam pad flex">
             <ion-icon class="ion"  name="person-circle"></ion-icon>
             <p onclick="selecVisib(this)">Reservadamente</p>
         </div>
-
     </div>
 
-    <div class="fade hidden" onclick="fechaAba()"></div>
+        <div class="fade hidden" onclick="fechaAba()"></div>
 
 
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-<script src="scripts.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

@@ -17,7 +17,7 @@
 
 .body{
     width:375px;
-    height: 507px;
+    height: 587px;
 }
 
 .hidden{
@@ -86,8 +86,9 @@ p:active{
     background: #E5E5E5;
     padding-top: 100px;
     width:375px;
-   
+   height: 500px;
 }
+
 
 .text-box{
     display: flex;
@@ -136,7 +137,6 @@ p:active{
 }
 
 .digitar{
-    position: fixed;
     display: flex;
     align-items: center;
     width: 375px;
@@ -197,11 +197,10 @@ p:active{
 
 .fade{
     position: absolute;
-    z-index: 2;
     top:0;
     left:0;
-    z-index:3;
-    width: 175px;
+    z-index:2;
+    width: 75px;
     height: 507px;
     background-color: rgba(0, 0, 0, 0.7);
 }

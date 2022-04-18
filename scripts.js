@@ -1,33 +1,36 @@
-let usuario; //GLOBAL
-let texto; //GLOBAL
-let mensagens = document.querySelector(".mensagens") //ENCONTRA DIV P/INSERIR MENSAGENS
+//GLOBAIS
+let usuario; 
+let texto; 
+let mensagens = document.querySelector(".mensagens");
 let destinatario;
 let privOUnao;
 
+
+//FUNCTION CALL
+login()
+setInterval(getMsg, 3000)
+getMsg()
+enviarNomes()
 
 
 //ADQUIRIR NOME DO USUARIO
 function login(){
 usuario = prompt("Qual o seu nome?")
 console.log(usuario)
-mensagens.innerHTML += ` <div class="text-box entrasai">
-    <div class="horario">(09:21:45) </div>
-    <div class="user-acao-destinatario bold"> ${usuario} <span class="h1">entrou na sala</span>
-    </div> `
 }
-login()
 
 
-//CRIA VARIAVEL TEXTO (COM O VALUE DO INPUT)
+//CRIAR VARIAVEL TEXTO (COM O VALUE DO INPUT)
 function send(){
     texto = document.querySelector("input").value
     console.log(texto)
     document.querySelector("input").value = ""
     postMsg();
     }
-    
-function postMsg(){
 
+    
+//ENVIAR MSG PRO SERVIDOR
+function postMsg(){
     const mensagemDoInput = {
         from: usuario,
         to: "Todos",
@@ -37,33 +40,34 @@ function postMsg(){
 
     let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/messages', mensagemDoInput)
 
-             promise.then(quandoSucesso);
-             promise.catch(quandoErro);
+         promise.then(quandoSucesso);
+         promise.catch(quandoErro);
 
              function quandoSucesso(){
-                 console.log("foi pro servidor?")
-             }
+                console.log("foi pro servidor?")
+                }
 
-             function quandoErro(){
-                 console.log("deu ruim!")
-             }
+            function quandoErro(){
+                   console.log("deu ruim!")
+                }
 }
   
 
-
-//ABRE ABA LATERAL
+//ABRIR ABA LATERAL
 function abaLateral(){
     document.querySelector(".lateral").classList.remove("hidden")
     document.querySelector(".fade").classList.remove("hidden")
+
 }
 
-//SÓ SABE FECHAR ABA LATERAL
+//FECHAR ABA LATERAL
 function fechaAba(){ 
     document.querySelector(".lateral").classList.add("hidden")
     document.querySelector(".fade").classList.add("hidden")
+
 }
 
-//ESCOLHE DESTINATARIO
+//ESCOLHER DESTINATARIO (BÔNUS/INCOMPLETO)
 function selecUser(elemento){
     destinatario = elemento.innerHTML
     console.log(destinatario)
@@ -71,20 +75,17 @@ function selecUser(elemento){
 
 }
 
-//ESCOLHE VISIBILIDADE
+//ESCOLHE VISIBILIDADE(BÔNUS/INCOMPLETO)
 function selecVisib(elemento){
     privOUnao = elemento.innerHTML;
     console.log(privOUnao);
     fechaAba() 
- 
-   
+
 }
 
 
-//API <-
-
-function enviarNomes(){                   //ENVIANDO NOME DO USER PRO API
-
+//ENVIAR NOME DO USER PRO SERVIDOR
+function enviarNomes(){                   
     const nome = {
     name: usuario
     };
@@ -95,54 +96,51 @@ function enviarNomes(){                   //ENVIANDO NOME DO USER PRO API
          promise.catch(quandoErro);
     
     
-
-    function quandoSucesso(response){           // USER OK
-        console.log(response)
-    }
-    function quandoErro(error){                //JÁ TEM USER COM ESSE NOME
-        console.log(error.response)
-        login();
-        enviarNomes()
-    }
-    setInterval(estaOnline, 5000);
+            function quandoSucesso(response){           
+                console.log(response)
+            }
+            function quandoErro(error){                
+                console.log(error.response)
+                login();
+                enviarNomes()
+            }
+    
+        setInterval(estaOnline, 5000);
 }
-    enviarNomes()
 
 
 
-function estaOnline(){              //ENVIANDO STATUS PRO API
-
+//ENVIAR STATUS PRO SERVIDOR
+function estaOnline(){              
     const nome = {
         name: usuario
         };
 
-             let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nome )
+        let promise = axios.post('https://mock-api.driven.com.br/api/v6/uol/status', nome )
 
-             promise.then(quandoSucesso);
-             promise.catch(quandoErro);
+        promise.then(quandoSucesso);
+        promise.catch(quandoErro);
 
-        function quandoSucesso(response){           // USER ON
-            console.log(response)
-        }
+            function quandoSucesso(response){           // USER ON
+                console.log(response)
+            }
 
-        function quandoErro(error){                //OFF
-            console.log(error.response)
-            estaOnline()
-   } 
-
+             function quandoErro(error){                //OFF
+                console.log(error.response)
+                window.location.reload()
+            } 
 }       
 
 
-setInterval(getMsg, 3000)
+//RECEBER MENSAGENS DO SERVIDOR
 function getMsg(){
-    
-            let promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
+        let promise = axios.get('https://mock-api.driven.com.br/api/v6/uol/messages')
 
              promise.then(quandoSucesso);
              promise.catch(quandoErro);
 
 
-        function quandoSucesso(response){           // MSG VEM
+        function quandoSucesso(response){           
             let dados = response.data
                        
             mensagens.innerHTML = "";
@@ -154,8 +152,6 @@ function getMsg(){
                 const type = dados[i].type;
                 const time = dados[i].time;
 
-            
-                
 
                 if (type=="message"){
                     mensagens.innerHTML += ` <div class="text-box public">
@@ -187,26 +183,16 @@ function getMsg(){
                     <div class="user-acao-destinatario bold"> ${user} <span class="h1">saiu da sala...</span>
                     </div> `
 
-                }      
-        
-            
+                }                      
             } 
-    }
 
-        function quandoErro(error){                //ERROR
+            let last = mensagens.lastElementChild;
+            last.scrollIntoView() 
+        }
+
+        function quandoErro(error){                
             console.log(error.response)
             getMsg()
          } 
 
      }
-
-
-getMsg()
-
-//const elementoQueQueroQueApareca = dados[dados.length-1]
-//elementoQueQueroQueApareca.scrollIntoView()
-
-
-
-// falta:       1)scrollintoview
-//              2) tela msg
