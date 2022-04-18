@@ -28,6 +28,17 @@ function send(){
     postMsg();
     }
 
+//ENVIAR COM ENTER
+document.addEventListener(
+  "keypress",
+  function (e) {
+    if (e.which == 13) {
+      send();
+    }
+  },
+  false
+);
+
     
 //ENVIAR MSG PRO SERVIDOR
 function postMsg(){
